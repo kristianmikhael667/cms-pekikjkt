@@ -46,6 +46,7 @@
                                                     <th>Full Name</th>
                                                     <th>Email</th>
                                                     <th>Phone Number</th>
+                                                    <th>Gender</th>
                                                     <th>Role ID</th>
                                                     <!-- <th>Action</th> -->
                                                 </tr>
@@ -59,6 +60,7 @@
                                                         <td><?php echo $dt->name ?></td>
                                                         <td><?php echo $dt->email ?></td>
                                                         <td><?php echo $dt->phone_number ?></td>
+                                                        <td><?php echo $dt->gender ?></td>
                                                         <td><?php echo $dt->role ?></td>
                                                         <!-- <td width="125">
                                                             <button onclick="detailUser()" type="button" class="btn btn-primary btn-sm">

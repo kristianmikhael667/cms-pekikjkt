@@ -74,7 +74,9 @@ class User extends BaseController
         $password = $request->getPost('password');
         $accessToken = $session->get('accessToken');
         $headers = [
-            'x-access-token' => $accessToken
+            'x-access-token' => $accessToken,
+            'Content-Type'        => 'application/json',
+
         ];
         var_dump($headers);
 
