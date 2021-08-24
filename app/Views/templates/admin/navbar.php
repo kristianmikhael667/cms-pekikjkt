@@ -12,24 +12,18 @@ $request = Services::request();
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <?php
-            switch ($request->uri->getSegment(2)) {
-                case 'dashboard':
-                    echo '<h4 class="ml-2 text-dark">Dashboard</h4>';
-                    break;
-                case 'products':
-                    echo '<div class="row">
-              <h4 class="ml-3 text-dark">List Product</h4>
-            </div>';
-                    break;
-                case 'categories':
-                    echo '<div class="row">
-              <h4 class="ml-3 text-dark">List Category Product</h4>
-            </div>';
-                    break;
-                case 'users':
+            // die(dd($request->uri->getSegment(3)));
+            switch ($request->uri->getSegment(3)) {
+
+                case 'list':
                     echo '<div class="row">
               <h3 class="ml-3 text-dark">List Users</h3>
               </div>';
+                    break;
+                case 'createuser':
+                    echo '<div class="row">
+                  <h3 class="ml-3 text-dark">Create Users</h3>
+                  </div>';
                     break;
                 case 'seller':
                     echo '<div class="row">
@@ -41,16 +35,20 @@ $request = Services::request();
                 <h3 class="ml-3 text-dark">List Transaksi</h3>
                 </div>';
                     break;
-                case 'markets':
+                case 'listtenant':
                     echo '<div class="row">
-            <h4 class="ml-3 text-dark">List Markets</h4>
-          </div>';
+                    <h3 class="ml-3 text-dark">List Tenant</h3>
+                    </div>';
                     break;
-                case 'outlets':
+                case 'createtenant':
                     echo '<div class="row">
-              <h4 class="ml-3 text-dark">List Outlets</h4>
-            </div>';
+                        <h3 class="ml-3 text-dark">Create Tenant</h3>
+                        </div>';
+                    break;
                 default;
+                    echo '<div class="row">
+                    <h3 class="ml-3 text-dark">Dashboard</h3>
+                    </div>';
                     break;
             }
             ?>

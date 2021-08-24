@@ -74,35 +74,38 @@ $request = Services::request();
                             </a>
                         </li>
                     </ul>
+                </li>
 
-                    <!-- <ul class="nav nav-treeview">
+                <li class="nav-item has-treeview <?= $request->uri->getSegment(2) == 'tenant' ? 'menu-open' : '' ?> <?= $request->uri->getSegment(3) == 'tenant' ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-store"></i>
+                        <p>
+                            Tenant
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/roles/banneduser') ?>" class="nav-link <?= $request->uri->getSegment(3) == 'banneduser' ? 'active' : '' ?>">
-                                <p>Banned User</p>
+                            <a href="<?= base_url('admin/tenant/createtenant') ?>" class="nav-link <?= $current_page == 'createtenant' ? 'active' : '' ?>">
+                                <p>Create Tenant</p>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/roles/merchantuser') ?>" class="nav-link <?= $request->uri->getSegment(3) == 'merchantuser' ? 'active' : '' ?>">
-                                <p>Merchant</p>
+                            <a href="<?= base_url('admin/tenant/listtenant') ?>" class="nav-link <?= $current_page == 'listtenant' ? 'active' : '' ?>">
+                                <p>All Tenant</p>
                             </a>
                         </li>
                     </ul>
+
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/roles/dkiuser') ?>" class="nav-link <?= $request->uri->getSegment(3) == 'dkiuser' ? 'active' : '' ?>">
-                                <p>DKI</p>
+                            <a href="<?= base_url('admin/tenant/mytenant') ?>" class="nav-link <?= $current_page == 'mytenant' ? 'active' : '' ?>">
+                                <p>My Tenant</p>
                             </a>
                         </li>
                     </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= base_url('admin/roles/adminuser') ?>" class="nav-link <?= $request->uri->getSegment(3) == 'vendor-user' ? 'active' : '' ?>">
-                                <p>Admin</p>
-                            </a>
-                        </li>
-                    </ul> -->
                 </li>
 
                 <li class="nav-item">

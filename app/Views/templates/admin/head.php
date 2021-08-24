@@ -42,6 +42,11 @@
     <link rel="stylesheet" href="<?= base_url('/adminLTE-3/plugins/sweetalert2/sweetalert2.min.css') ?>">
     <!-- Dropify -->
     <link href="<?= base_url('/plugins/dropify/dropify.min.css') ?>" rel="stylesheet" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

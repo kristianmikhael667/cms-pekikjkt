@@ -67,10 +67,10 @@
                                 <div class="small-box bg-danger" style="background-color: #bdd8fe; background-image: linear-gradient(315deg, #bdd8fe 0%, #e186b4 74%); ">
                                     <div class="inner">
                                         <h3>21</h3>
-                                        <p>Banned User</p>
+                                        <p>Users Seller</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="ion ion-close-circled"></i>
+                                        <i class="ion ion-pricetags"></i>
                                     </div>
                                     <a href="<?= base_url('admin/user-roles/vendor-user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
@@ -80,10 +80,10 @@
                                 <div class="small-box bg-danger" style="background-color: #9f98e8 ;background-image: linear-gradient(315deg, #9f98e8  0%, #aacaef 74%);">
                                     <div class="inner">
                                         <h3>54</h3>
-                                        <p>User Merchant</p>
+                                        <p>My Tenant</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="ion ion-bag"></i>
+                                        <i class="ion ion-briefcase"></i>
                                     </div>
                                     <a href="<?= base_url('admin/user-roles/courier-user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
@@ -93,14 +93,16 @@
                                 <div class="small-box bg-danger" style="background-color: #9f98e8 ;background-image: linear-gradient(315deg, #9f98e8  0%, #aacaef 74%);">
                                     <div class="inner">
                                         <h3>54</h3>
-                                        <p>User DKI</p>
+                                        <p>Transaction</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="ion ion-person"></i>
+                                        <i class="ion ion-cash"></i>
                                     </div>
                                     <a href="<?= base_url('admin/user-roles/courier-user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
+
+
 
                         </div>
                     </div>

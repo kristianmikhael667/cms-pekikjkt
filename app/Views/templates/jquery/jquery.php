@@ -45,7 +45,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <!-- Alert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+<!-- Leaflet -->
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 <script>
     $('#user-lists').DataTable({
         responsive: true,

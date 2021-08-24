@@ -30,6 +30,11 @@ $routes->group('admin', function ($routes) {
 		$routes->get('createuser', 'User::createuser', ['namespace' => 'App\Controllers\Admin\User']);
 		$routes->post('postuser', 'User::postuser', ['namespace' => 'App\Controllers\Admin\User']);
 	});
+	$routes->group('tenant', function ($routes) {
+		$routes->get('listtenant', 'Tenant::index', ['namespace' => 'App\Controllers\Admin\Tenant']);
+		$routes->get('createtenant', 'Tenant::createtenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
+		$routes->post('createcity', 'Tenant::createcity', ['namespace' => 'App\Controllers\Admin\Tenant']);
+	});
 	$routes->group('roles', function ($routes) {
 		$routes->get('banneduser', 'Role::index', ['namespace' => 'App\Controllers\Admin\Role']);
 		$routes->get('merchantuser', 'Role::merchant', ['namespace' => 'App\Controllers\Admin\Role']);
