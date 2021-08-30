@@ -32,6 +32,8 @@
                     </div>
                 </div>
 
+
+
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid">
@@ -48,7 +50,7 @@
                                                     <th>Phone Number</th>
                                                     <th>Gender</th>
                                                     <th>Role ID</th>
-                                                    <!-- <th>Action</th> -->
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -62,14 +64,15 @@
                                                         <td><?php echo $dt->phone_number ?></td>
                                                         <td><?php echo $dt->gender ?></td>
                                                         <td><?php echo $dt->role ?></td>
-                                                        <!-- <td width="125">
-                                                            <button onclick="detailUser()" type="button" class="btn btn-primary btn-sm">
+                                                        <td width="125">
+                                                            <button onclick="detailUser('<?= $dt->_id ?>')" type="button" class="btn btn-primary btn-sm">
                                                                 <i class="fas fa-bars"></i>
                                                             </button>
-                                                            <button onclick="editUser()" type="button" class="btn btn-primary btn-sm">
+
+                                                            <button onclick="editUser(<?= $dt->_id ?>)" type="button" class="btn btn-primary btn-sm">
                                                                 <i class="far fa-edit"></i>
                                                             </button>
-                                                        </td> -->
+                                                        </td>
                                                     </tr>
                                                 <?php endforeach ?>
                                             </tbody>
@@ -86,10 +89,10 @@
     </div>
     </section>
     </div>
-
+    <?= $this->include("user/modal_detail_user.php") ?>
 
     <?= $this->include("templates/jquery/jquery.php") ?>
-
+    <?= $this->include("templates/jquery/user.php") ?>
 </body>
 
 </html>

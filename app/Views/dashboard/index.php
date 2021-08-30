@@ -31,29 +31,14 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid">
                         <div class="row">
-
-                            <!-- <div class="col-lg-3 col-6">
-                                <div class="small-box bg-danger" style="background-color: #aff6cf; background-image: linear-gradient(315deg, #aff6cf 0%, #9f98e8 74%); ">
-                                    <div class="inner">
-                                        <h3>20</h3>
-                                        <p>Total Category</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-cube"></i>
-                                    </div>
-                                    <a href="<?= base_url('admin/products/list') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div> -->
-
                             <div class="col-lg-3 col-6">
                                 <div class="small-box bg-danger" style="background-color: #f876de; background-image: linear-gradient(315deg, #f876de 0%, #b9d1eb 74%);">
                                     <div class="inner">
-                                        <h3>10</h3>
+                                        <h3><?= count(allUsers()->data) ?></h3>
                                         <p>Users</p>
                                     </div>
                                     <div class="icon">
@@ -63,10 +48,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-3 col-6">
+                            <!-- <div class="col-lg-3 col-6">
                                 <div class="small-box bg-danger" style="background-color: #bdd8fe; background-image: linear-gradient(315deg, #bdd8fe 0%, #e186b4 74%); ">
                                     <div class="inner">
-                                        <h3>21</h3>
+                                        <h3><?= count(allUsers()->data) ?></h3>
                                         <p>Users Seller</p>
                                     </div>
                                     <div class="icon">
@@ -74,18 +59,18 @@
                                     </div>
                                     <a href="<?= base_url('admin/user-roles/vendor-user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-lg-3 col-6">
                                 <div class="small-box bg-danger" style="background-color: #9f98e8 ;background-image: linear-gradient(315deg, #9f98e8  0%, #aacaef 74%);">
                                     <div class="inner">
-                                        <h3>54</h3>
+                                        <h3><?= count(allTenant()->data) ?></h3>
                                         <p>My Tenant</p>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-briefcase"></i>
                                     </div>
-                                    <a href="<?= base_url('admin/user-roles/courier-user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="<?= base_url('admin/tenant/listtenant') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
 
@@ -98,7 +83,7 @@
                                     <div class="icon">
                                         <i class="ion ion-cash"></i>
                                     </div>
-                                    <a href="<?= base_url('admin/user-roles/courier-user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
 

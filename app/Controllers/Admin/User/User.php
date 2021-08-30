@@ -31,6 +31,39 @@ class User extends BaseController
         }
     }
 
+    public function detailuser()
+    {
+        $session = Services::session();
+        $request = Services::request();
+        $user_id = $request->getPost('id');
+
+        $client = new \GuzzleHttp\Client();
+        $request = Services::request();
+        $accessToken = $session->get('accessToken');
+
+        $headers = [
+            'x-access-token' => $accessToken
+        ];
+
+        $response = $client->get(getenv('API_URL') . '/user-service/user/' . $user_id, [
+            'headers' => $headers
+        ]);
+        $response = $response->getBody()->getContents();
+        $result = json_decode($response);
+        // var_dump($result);
+        // die();
+        echo json_encode($result);
+        // return json_encode([
+        //     "_id" => $result->data->_id,
+        //     "email" => $result->data->email,
+        //     "name" => $result->data->name,
+        //     "identity_number" => $result->data->identity_number,
+        //     "gender" => $result->data->gender,
+        //     "phone_number" => $result->data->phone_number,
+        //     "avatar_url" => $result->data->avatar_url
+        // ]);
+    }
+
     public function seller()
     {
         $data = array();
