@@ -45,6 +45,11 @@ $request = Services::request();
                         <h3 class="ml-3 text-dark">Create Tenant</h3>
                         </div>';
                     break;
+                case 'productcreatedtenant':
+                    echo '<div class="row">
+                    <h3 class="ml-3 text-dark">Product Created Tenant</h3>
+                    </div>';
+                    break;
                 default;
                     echo '<div class="row">
                     <h3 class="ml-3 text-dark">Dashboard</h3>

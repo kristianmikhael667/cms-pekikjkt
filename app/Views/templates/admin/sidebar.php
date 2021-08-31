@@ -106,6 +106,14 @@ $request = Services::request();
                             </a>
                         </li>
                     </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/tenant/productcreatedtenant') ?>" class="nav-link <?= $current_page == 'productcreatedtenant' ? 'active' : '' ?>">
+                                <p>Product Created Tenant</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">

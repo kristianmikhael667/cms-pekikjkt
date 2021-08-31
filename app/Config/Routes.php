@@ -34,6 +34,8 @@ $routes->group('admin', function ($routes) {
 	$routes->group('tenant', function ($routes) {
 		$routes->get('listtenant', 'Tenant::index', ['namespace' => 'App\Controllers\Admin\Tenant']);
 		$routes->get('createtenant', 'Tenant::createtenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
+		$routes->get('productcreatedtenant', 'Tenant::tenantproduct', ['namespace' => 'App\Controllers\Admin\Tenant']);
+		$routes->get('excel', 'Tenant::excel', ['namespace' => 'App\Controllers\Admin\Tenant']);
 		$routes->post('createcity', 'Tenant::createcity', ['namespace' => 'App\Controllers\Admin\Tenant']);
 		$routes->post('posttenant', 'Tenant::posttenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
 	});

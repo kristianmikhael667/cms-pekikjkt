@@ -32,6 +32,104 @@ class Tenant extends BaseController
         }
     }
 
+    public function excel()
+    {
+        $data = array();
+        $session = Services::session();
+        $client = new \GuzzleHttp\Client();
+        $accessToken = $session->get('accessToken');
+        $headers = [
+            'x-access-token' => $accessToken
+        ];
+        $url_product = getenv('API_URL') . '/commerce-service/product';
+        $url_users = getenv('API_URL') . '/user-service/users';
+        $url_tenant = getenv('API_URL') . '/commerce-service/tenant';
+
+        // response product
+        $response = $client->get($url_product, [
+            'headers' => $headers
+        ]);
+
+        //response user
+        $response2 = $client->get($url_users, [
+            'headers' => $headers
+        ]);
+
+        //response tenant
+        $response3 = $client->get($url_tenant, [
+            'headers' => $headers
+        ]);
+        if ($response->getBody() && $response2->getBody() && $response3->getBody()) {
+
+            //response product
+            $response = $response->getBody()->getContents();
+            $result = json_decode($response);
+
+            //response user
+            $response2 = $response2->getBody()->getContents();
+            $result2 = json_decode($response2);
+
+            //response tenant
+            $response3 = $response3->getBody()->getContents();
+            $result3 = json_decode($response3);
+
+            $data["product"] = $result->data;
+            $data["users"] = $result2->data;
+            $data["tenant"] = $result3->data;
+
+            return view('tenant/exceltenantproduct', $data);
+        }
+    }
+
+    public function tenantproduct()
+    {
+        $data = array();
+        $session = Services::session();
+        $client = new \GuzzleHttp\Client();
+        $accessToken = $session->get('accessToken');
+        $headers = [
+            'x-access-token' => $accessToken
+        ];
+        $url_product = getenv('API_URL') . '/commerce-service/product';
+        $url_users = getenv('API_URL') . '/user-service/users';
+        $url_tenant = getenv('API_URL') . '/commerce-service/tenant';
+
+        // response product
+        $response = $client->get($url_product, [
+            'headers' => $headers
+        ]);
+
+        //response user
+        $response2 = $client->get($url_users, [
+            'headers' => $headers
+        ]);
+
+        //response tenant
+        $response3 = $client->get($url_tenant, [
+            'headers' => $headers
+        ]);
+        if ($response->getBody() && $response2->getBody() && $response3->getBody()) {
+
+            //response product
+            $response = $response->getBody()->getContents();
+            $result = json_decode($response);
+
+            //response user
+            $response2 = $response2->getBody()->getContents();
+            $result2 = json_decode($response2);
+
+            //response tenant
+            $response3 = $response3->getBody()->getContents();
+            $result3 = json_decode($response3);
+
+            $data["product"] = $result->data;
+            $data["users"] = $result2->data;
+            $data["tenant"] = $result3->data;
+
+            return view('tenant/tenantproduct', $data);
+        }
+    }
+
     public function createtenant()
     {
         $data = array();
