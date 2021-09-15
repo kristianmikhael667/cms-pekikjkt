@@ -63,10 +63,10 @@
                                                         <td><?php echo $tenant->tenant_phone ?></td>
                                                         <td><?php echo $tenant->tenant_type ?></td>
                                                         <td width="125">
-                                                            <button onclick="detailUser()" type="button" class="btn btn-primary btn-sm">
+                                                            <button onclick="detailTenant('<?= $tenant->_id ?>')" type="button" class="btn btn-primary btn-sm">
                                                                 <i class="fas fa-bars"></i>
                                                             </button>
-                                                            <button onclick="editUser()" type="button" class="btn btn-primary btn-sm">
+                                                            <button onclick="editTenant('<?= $tenant->_id ?>')" type="button" class="btn btn-primary btn-sm">
                                                                 <i class="far fa-edit"></i>
                                                             </button>
                                                         </td>
@@ -87,7 +87,9 @@
     </section>
     </div>
 
-
+    <?= $this->include("tenant/modal_detail_tenant.php") ?>
+    <?= $this->include("tenant/modal_edit_tenant.php") ?>
+    <?= $this->include("templates/jquery/tenant.php") ?>
     <?= $this->include("templates/jquery/jquery.php") ?>
 
 </body>

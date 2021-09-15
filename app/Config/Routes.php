@@ -38,6 +38,8 @@ $routes->group('admin', function ($routes) {
 		$routes->get('excel', 'Tenant::excel', ['namespace' => 'App\Controllers\Admin\Tenant']);
 		$routes->post('createcity', 'Tenant::createcity', ['namespace' => 'App\Controllers\Admin\Tenant']);
 		$routes->post('posttenant', 'Tenant::posttenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
+		$routes->post('detailtenant', 'Tenant::detailtenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
+		$routes->post('updatetenant', 'Tenant::updatetenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
 	});
 	$routes->group('roles', function ($routes) {
 		$routes->get('banneduser', 'Role::index', ['namespace' => 'App\Controllers\Admin\Role']);

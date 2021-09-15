@@ -15,21 +15,54 @@ class Tenant extends BaseController
         $session = Services::session();
         $client = new \GuzzleHttp\Client();
         $accessToken = $session->get('accessToken');
+        $keys = "83e9f659114c8574f2f0b53cabfa2102";
         $headers = [
             'x-access-token' => $accessToken
         ];
+        $headerst = [
+            'key' => $keys
+        ];
         $url = getenv('API_URL') . '/commerce-service/tenant';
+        $url2 = "https://api.rajaongkir.com/starter/province";
 
         $response = $client->get($url, [
             'headers' => $headers
         ]);
+        $response2 = $client->get($url2, [
+            'headers' => $headerst
+        ]);
 
-        if ($response->getBody()) {
+        if ($response->getBody() || $response2->getBody()) {
             $response = $response->getBody()->getContents();
+            $response2 = $response2->getBody()->getContents();
             $result = json_decode($response);
+            $result2 = json_decode($response2);
             $data["tenants"] = $result->data;
+            $data["provinsi"] = $result2->rajaongkir->results;
             return view('tenant/index', $data);
         }
+    }
+
+    public function detailtenant()
+    {
+        $session = Services::session();
+        $request = Services::request();
+        $tenant_id = $request->getPost('id');
+
+        $client = new \GuzzleHttp\Client();
+        $request = Services::request();
+        $accessToken = $session->get('accessToken');
+
+        $headers = [
+            'x-access-token' => $accessToken
+        ];
+
+        $response = $client->get(getenv('API_URL') . '/commerce-service/tenant/' . $tenant_id, [
+            'headers' => $headers
+        ]);
+        $response = $response->getBody()->getContents();
+        $result = json_decode($response);
+        echo json_encode($result);
     }
 
     public function excel()
@@ -227,5 +260,45 @@ class Tenant extends BaseController
         );
         $response = $req->getBody()->getContents();
         $result = json_decode($response);
+    }
+
+    public function updatetenant()
+    {
+        $client = new \GuzzleHttp\Client();
+        $session = Services::session();
+        $request = Services::request();
+
+        $tenant_uid = $request->getPost('tenantuid');
+        $tenant_name = $request->getPost('tenantname');
+        $tenant_number = $request->getPost('tenantnumber');
+        $tenant_type = $request->getPost('tenanttype');
+        $tenant_address = $request->getPost('tenantaddress');
+        $tenant_district = $request->getPost('tenantdistrict');
+        $tenant_id_district = $request->getPost('tenantiddistrict');
+        $accessToken = $session->get('accessToken');
+        $headers = [
+            'x-access-token' => $accessToken,
+            'Content-Type'        => 'application/json',
+        ];
+        $data = [
+            "tenant_name" => $tenant_name,
+            "tenant_phone" => $tenant_number,
+            "tenant_type" => $tenant_type,
+            "tenant_address" => $tenant_address,
+            "tenant_phone" => $tenant_number,
+            "sub_district" => $tenant_district,
+            "tenant_phone" => $tenant_number,
+            "tenantiddistrict" => $tenant_id_district
+        ];
+
+        $url =  getenv('API_URL') . '/commerce-service/tenant/' . $tenant_uid;
+
+        $req = $client->put(
+            $url,
+            [
+                "body" => json_encode($data),
+                "headers" => $headers
+            ]
+        );
     }
 }
