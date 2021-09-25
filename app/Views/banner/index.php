@@ -23,7 +23,7 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb mr-2">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">PeKiKJKT</a></li>
-                                        <li class="breadcrumb-item active">Users Seller</li>
+                                        <li class="breadcrumb-item active">All Banner</li>
                                     </ol>
                                 </div>
 
@@ -31,6 +31,8 @@
                         </div>
                     </div>
                 </div>
+
+
 
                 <!-- Main content -->
                 <section class="content">
@@ -43,34 +45,26 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Full Name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone Number</th>
-                                                    <th>Role ID</th>
-                                                    <!-- <th>Action</th> -->
+                                                    <th>Title</th>
+                                                    <th>URL Link</th>
+                                                    <th>Description</th>
+                                                    <th>Media Type</th>
+                                                    <th>Banner</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php $no = 1;
-                                                foreach ($users as $dt) :
-                                                    if ($dt->role == "basic") :
+                                                foreach ($banners as $banner) :
                                                 ?>
-                                                        <tr>
-                                                            <td><?php echo $no++ ?></td>
-                                                            <td><?php echo $dt->name ?></td>
-                                                            <td><?php echo $dt->email ?></td>
-                                                            <td><?php echo $dt->phone_number ?></td>
-                                                            <td><?php echo $dt->role ?></td>
-                                                            <!-- <td width="125">
-                                                            <button onclick="detailUser()" type="button" class="btn btn-primary btn-sm">
-                                                                <i class="fas fa-bars"></i>
-                                                            </button>
-                                                            <button onclick="editUser()" type="button" class="btn btn-primary btn-sm">
-                                                                <i class="far fa-edit"></i>
-                                                            </button>
-                                                        </td> -->
-                                                        </tr>
-                                                    <?php endif ?>
+                                                    <tr>
+                                                        <td><?php echo $no++ ?></td>
+                                                        <td><?php echo $banner->title ?></td>
+                                                        <td><?php echo $banner->launch_url ?></td>
+                                                        <td><?php echo $banner->desc ?></td>
+                                                        <td><?php echo $banner->media_type ?></td>
+                                                        <td><img style="width: 200; height:100px" class="img-fluid img-thumbnail" src="<?php echo $banner->media_url ?>" /> </td>
+
+                                                    </tr>
                                                 <?php endforeach ?>
                                             </tbody>
                                         </table>
@@ -86,10 +80,10 @@
     </div>
     </section>
     </div>
-
+    <?= $this->include("user/modal_detail_user.php") ?>
 
     <?= $this->include("templates/jquery/jquery.php") ?>
-
+    <?= $this->include("templates/jquery/user.php") ?>
 </body>
 
 </html>

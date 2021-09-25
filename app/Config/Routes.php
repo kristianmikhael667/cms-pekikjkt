@@ -41,6 +41,11 @@ $routes->group('admin', function ($routes) {
 		$routes->post('detailtenant', 'Tenant::detailtenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
 		$routes->post('updatetenant', 'Tenant::updatetenant', ['namespace' => 'App\Controllers\Admin\Tenant']);
 	});
+	$routes->group('banner', function ($routes) {
+		$routes->get('listbanner', 'Banner::index', ['namespace' => 'App\Controllers\Admin\Banner']);
+		$routes->get('createbanner', 'Banner::createbanner', ['namespace' => 'App\Controllers\Admin\Banner']);
+		$routes->post('postbanner', 'Banner::storebanner', ['namespace' => 'App\Controllers\Admin\Banner']);
+	});
 	$routes->group('roles', function ($routes) {
 		$routes->get('banneduser', 'Role::index', ['namespace' => 'App\Controllers\Admin\Role']);
 		$routes->get('merchantuser', 'Role::merchant', ['namespace' => 'App\Controllers\Admin\Role']);

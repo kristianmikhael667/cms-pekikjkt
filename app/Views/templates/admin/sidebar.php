@@ -116,6 +116,32 @@ $request = Services::request();
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview <?= $request->uri->getSegment(2) == 'banner' ? 'menu-open' : '' ?> <?= $request->uri->getSegment(3) == 'banner' ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-images"></i>
+                        <p>
+                            Banner
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/banner/createbanner') ?>" class="nav-link <?= $current_page == 'createbanner' ? 'active' : '' ?>">
+                                <p>Create Banner</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/banner/listbanner') ?>" class="nav-link <?= $current_page == 'listbanner' ? 'active' : '' ?>">
+                                <p>All Banner</p>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link active">
                         <i class="nav-icon far fa-credit-card"></i>

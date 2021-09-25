@@ -50,6 +50,16 @@ $request = Services::request();
                     <h3 class="ml-3 text-dark">Product Created Tenant</h3>
                     </div>';
                     break;
+                case 'listbanner':
+                    echo '<div class="row">
+                        <h3 class="ml-3 text-dark">List Banner</h3>
+                        </div>';
+                    break;
+                case 'createbanner':
+                    echo '<div class="row">
+                            <h3 class="ml-3 text-dark">Create Banner</h3>
+                            </div>';
+                    break;
                 default;
                     echo '<div class="row">
                     <h3 class="ml-3 text-dark">Dashboard</h3>
