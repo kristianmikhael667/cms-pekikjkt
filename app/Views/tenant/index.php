@@ -44,6 +44,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>ID</th>
+                                                    <th>Owner</th>
                                                     <th>Tenant Name</th>
                                                     <th>Tenant Address</th>
                                                     <th>Tenant Phone</th>
@@ -58,6 +59,7 @@
                                                     <tr>
                                                         <td><?php echo $no++ ?></td>
                                                         <td><?php echo $tenant->_id ?></td>
+                                                        <td><?php echo $tenant->owner ?></td>
                                                         <td><?php echo $tenant->tenant_name ?></td>
                                                         <td><?php echo $tenant->tenant_address ?></td>
                                                         <td><?php echo $tenant->tenant_phone ?></td>
