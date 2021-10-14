@@ -1,6 +1,6 @@
 <?= $this->include('Views/templates/admin/head') ?>
 
-<meta http-equiv="refresh" content="300" />
+<!-- <meta http-equiv="refresh" content="300" /> -->
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">

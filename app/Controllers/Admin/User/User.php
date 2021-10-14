@@ -136,4 +136,44 @@ class User extends BaseController
         $response = $req->getBody()->getContents();
         $result = json_decode($response);
     }
+
+    public function updateuser()
+    {
+        $client = new \GuzzleHttp\Client();
+        $session = Services::session();
+        $request = Services::request();
+
+        $user_uid = $request->getPost('useruid');
+        $user_name = $request->getPost('userfullname');
+        $user_number = $request->getPost('userphonenumber');
+        $user_roletype = $request->getPost('userrole');
+        $user_gender = $request->getPost('usergender');
+        $user_email = $request->getPost('useremail');
+        $user_id_district = $request->getPost('useridentitynumber');
+        $accessToken = $session->get('accessToken');
+        $headers = [
+            'x-access-token' => $accessToken,
+            'Content-Type'        => 'application/json',
+        ];
+        $data = [
+            "_id" => $user_uid,
+            "name" => $user_name,
+            "phone_number" => $user_number,
+            "role" => $user_roletype,
+            "gender" => $user_gender,
+            "email" => $user_email,
+            "identity_number" => $user_id_district,
+        ];
+        // var_dump($data);
+        // die;
+        $url =  getenv('API_URL') . '/user-service/user/' . $user_uid;
+
+        $req = $client->put(
+            $url,
+            [
+                "body" => json_encode($data),
+                "headers" => $headers
+            ]
+        );
+    }
 }

@@ -1,6 +1,6 @@
 <?= $this->include('Views/templates/admin/head') ?>
 
-<meta http-equiv="refresh" content="300" />
+<!-- <meta http-equiv="refresh" content="300" /> -->
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -69,7 +69,7 @@
                                                                 <i class="fas fa-bars"></i>
                                                             </button>
 
-                                                            <button onclick="editUser(<?= $dt->_id ?>)" type="button" class="btn btn-primary btn-sm">
+                                                            <button onclick="editUser('<?= $dt->_id ?>')" type="button" class="btn btn-primary btn-sm">
                                                                 <i class="far fa-edit"></i>
                                                             </button>
                                                         </td>
@@ -90,7 +90,7 @@
     </section>
     </div>
     <?= $this->include("user/modal_detail_user.php") ?>
-
+    <?= $this->include("user/modal_edit_user.php") ?>
     <?= $this->include("templates/jquery/jquery.php") ?>
     <?= $this->include("templates/jquery/user.php") ?>
 </body>

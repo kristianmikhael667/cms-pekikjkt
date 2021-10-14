@@ -42,8 +42,10 @@ class Filters extends BaseConfig
 				'/',
 				'admin',
 				'admin/dashboard',
-				'admin/users/list',
-				'admin/users/seller'
+				'admin/users/*',
+				'admin/tenant/*',
+				'admin/banner/*',
+				'admin/roles/*'
 			],
 			'after' => [
 				'admin/auth/login'

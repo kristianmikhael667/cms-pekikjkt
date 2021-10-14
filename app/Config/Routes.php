@@ -30,6 +30,7 @@ $routes->group('admin', function ($routes) {
 		$routes->get('createuser', 'User::createuser', ['namespace' => 'App\Controllers\Admin\User']);
 		$routes->post('postuser', 'User::postuser', ['namespace' => 'App\Controllers\Admin\User']);
 		$routes->post('detailuser', 'User::detailuser', ['namespace' => 'App\Controllers\Admin\User']);
+		$routes->post('updateuser', 'User::updateuser', ['namespace' => 'App\Controllers\Admin\User']);
 	});
 	$routes->group('tenant', function ($routes) {
 		$routes->get('listtenant', 'Tenant::index', ['namespace' => 'App\Controllers\Admin\Tenant']);
